@@ -63,7 +63,7 @@ docker run hello-world
 
 
 ### Rocker
-[This repository](https://github.com/rocker-org/rocker) contains the tool to run docker images with customized local support injected for things like nvidia support. And user id specific files for cleaner mounting file permissions.
+[This repository](https://github.com/osrf/rocker) contains the tool to run docker images with customized local support injected for things like nvidia support. And user id specific files for cleaner mounting file permissions.
 
 Rocker is available via pip you can install it via pip using
 ```
@@ -75,7 +75,7 @@ After the installation you need to restart your PC
 ### TIAGo Image
 The TIAGo image can be pulled from `docker-hub` with the command
 ```
-docker push francescod98/labrob_tiago:tagname
+docker pull francescod98/labrob_tiago:tagname
 ```
 substituting to `tagname` the ROS distribution that you want to use, such as `noetic` or `melodic`.
 
