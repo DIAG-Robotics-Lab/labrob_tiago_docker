@@ -93,11 +93,19 @@ the most importants are the following
  - `--nocleanup` don't remove the docker container when stopped.
  - `--nvidia` enables Nvidia docker support
 
-In case of Nvidia graphic support mounted on the PC, you would need first to install the [Nvidia Docker Support](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker) with the following commands
+In case of Nvidia graphic support mounted on the PC, you would need first to install the [Nvidia Docker Support](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) with the following commands (installation with apt)
 ```
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID)    && curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -    && curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+  && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
+    sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+    sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+sudo sed -i -e '/experimental/ s/^#//g' /etc/apt/sources.list.d/nvidia-container-toolkit.list
 sudo apt-get update
-sudo apt-get install -y nvidia-docker2
+sudo apt-get install -y nvidia-container-toolkit
+```
+and then you need to configure docker running
+```
+sudo nvidia-ctk runtime configure --runtime=docker
 sudo systemctl restart docker
 ```
 
