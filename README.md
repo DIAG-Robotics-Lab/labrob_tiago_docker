@@ -75,11 +75,10 @@ After the installation you need to restart your PC
 ### TIAGo Image
 The TIAGo image can be pulled from `docker-hub` with the command
 ```
-docker pull francescod98/labrob_tiago:tagname
+docker pull francescod98/labrob_tiago:noetic
 ```
-substituting to `tagname` the ROS distribution that you want to use, such as `noetic` or `melodic`.
 
-The base image is the `palroboticssl/tiago_tutorials:tagname` in which [blasfeo](https://github.com/giaf/blasfeo), [hpipm](https://github.com/giaf/hpipm), [acados](https://docs.acados.org/) and [pinocchio](https://stack-of-tasks.github.io/pinocchio/) have been already installed
+The base image is the `palroboticssl/tiago_tutorials:noetic` in which [blasfeo](https://github.com/giaf/blasfeo), [hpipm](https://github.com/giaf/hpipm), [acados](https://docs.acados.org/) and [pinocchio](https://stack-of-tasks.github.io/pinocchio/) have been already installed
 
 
 
@@ -117,11 +116,11 @@ export TMPDIR=~/tmp_docker_files
 
 Finally the container is created using the command
 ```
-rocker --home --user --x11 --privileged --nocleanup francescod98/labrob_tiago:tagname --devices /dev/dri/card0 
+rocker --home --user --x11 --privileged --nocleanup francescod98/labrob_tiago:noetic --devices /dev/dri/card0 
 ```
 or, in case of Nvidia support, with
 ```
-rocker --home --user --nvidia --x11 --privileged --nocleanup francescod98/labrob_tiago:tagname
+rocker --home --user --nvidia --x11 --privileged --nocleanup francescod98/labrob_tiago:noetic
 ```
 If the procedure ends succesfully the terminal enters in the container just created.
 
