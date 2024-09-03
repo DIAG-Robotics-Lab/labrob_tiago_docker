@@ -120,7 +120,7 @@ rocker --home --user --x11 --privileged --nocleanup francescod98/labrob_tiago:no
 ```
 or, in case of Nvidia support, with
 ```
-rocker --home --user --nvidia --x11 --privileged --nocleanup francescod98/labrob_tiago:noetic
+rocker --home --user --nvidia --x11 --privileged --nocleanup francescod98/labrob_tiago:noetic --devices /dev/dri/card0
 ```
 If the procedure ends succesfully the terminal enters in the container just created.
 
