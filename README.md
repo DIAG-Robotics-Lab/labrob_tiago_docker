@@ -116,11 +116,11 @@ export TMPDIR=~/tmp_docker_files
 
 Finally the container is created using the command
 ```
-rocker --home --user --x11 --privileged --nocleanup francescod98/labrob_tiago:noetic --devices /dev/dri/card0 
+rocker --home --user --x11 --privileged --nocleanup francescod98/labrob_tiago:noetic 
 ```
 or, in case of Nvidia support, with
 ```
-rocker --home --user --nvidia --x11 --privileged --nocleanup francescod98/labrob_tiago:noetic --devices /dev/dri/card0
+rocker --home --user --nvidia --x11 --privileged --nocleanup francescod98/labrob_tiago:noetic
 ```
 If the procedure ends succesfully the terminal enters in the container just created.
 
